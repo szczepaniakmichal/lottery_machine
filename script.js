@@ -4,23 +4,26 @@ const liczby_szczesliwe = [];
 const liczby_trafione = [];
 
 const losowanie_wszystkich_liczb = () => {
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 42; i++) {
         wszystkie_liczby.push(i);
     }
 }
 
 const chybil_trafil = () => {
-    for (let i = 0; i <= 2; i++) {
+    while ( liczby_chybil_trafil.length < 6 ) {
         let wylosowanaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
-        liczby_chybil_trafil.push(wylosowanaLiczba);
+        if ( liczby_chybil_trafil.includes(wylosowanaLiczba) == false ) {
+         liczby_chybil_trafil.push(wylosowanaLiczba);
+        }  
     }
-
 }
 
 const szczesliwe_liczby = () => {
-    for (let i = 0; i <= 2; i++) {
-        let szczesliwaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
-        liczby_szczesliwe.push(szczesliwaLiczba);
+    while ( liczby_szczesliwe.length < 6 ) {
+        let wylosowanaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
+        if ( liczby_szczesliwe.includes(wylosowanaLiczba) == false ) {
+            liczby_szczesliwe.push(wylosowanaLiczba);
+        }
     }
 }
 
@@ -36,15 +39,17 @@ const sprawdzenie_trafien = () => {
 
 
 losowanie_wszystkich_liczb();
-
 chybil_trafil();
-
 szczesliwe_liczby();
-
 sprawdzenie_trafien();
 
 
 console.log(wszystkie_liczby);
-console.log(liczby_chybil_trafil);
-console.log(liczby_szczesliwe);
-console.log(liczby_trafione);
+console.log(`Liczby chybił trafił: ${liczby_chybil_trafil}`);
+console.log(`Liczby wylosowane dziś: ${liczby_szczesliwe}`);
+console.log(`Liczby trafione: ${liczby_trafione}`);
+console.log(`Ilość liczb trafionych: ${liczby_trafione.length}`);
+
+
+
+
