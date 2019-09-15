@@ -3,6 +3,24 @@ let liczby_chybil_trafil = [];
 let liczby_wylosowane_dzis = [];
 let liczby_trafione = [];
 
+
+const timeStart = new Date();
+console.log(timeStart);
+
+
+const timeEnd = () => {
+    const time = new Date();
+    console.log(time);
+};
+
+const timeCurrentLos = (timeStart) => {
+    const timeEnd = new Date();
+    let different = (timeEnd - timeStart) / 1000;
+    console.log(timeEnd);
+    return console.log(`Czas trwania skryptu to: ${different.toFixed(2)} sukund`);
+}
+
+
 const losowanie_wszystkich_liczb = () => {
     for (let i = 1; i <= 42; i++) {
         wszystkie_liczby.push(i);
@@ -12,19 +30,21 @@ const losowanie_wszystkich_liczb = () => {
 losowanie_wszystkich_liczb();
 
 const losowanie = (los, ilosc) => {
-    while ( los.length < ilosc ) {
+    while (los.length < ilosc) {
         let wylosowanaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
-        if ( los.includes(wylosowanaLiczba) === false ) {
+        if (los.includes(wylosowanaLiczba) === false) {
             los.push(wylosowanaLiczba);
         }
     }
-    los.sort( function( a, b ) { return a - b } );
+    los.sort(function (a, b) {
+        return a - b
+    });
 };
 
 const sprawdzenie_trafien = () => {
     liczby_chybil_trafil.forEach(e => {
         liczby_wylosowane_dzis.forEach(f => {
-            if( e === f ) {
+            if (e === f) {
                 liczby_trafione.push(e);
             }
         })
@@ -49,9 +69,11 @@ const wszystkieFunkcje = () => {
     losowanie(liczby_chybil_trafil, 6);
     losowanie(liczby_wylosowane_dzis, 6);
     sprawdzenie_trafien();
-    if (liczby_trafione.length === 5) {
+    if (liczby_trafione.length === 4) {
         clearInterval(ciagleLosowanie);
         clearInterval(czas);
+        timeEnd();
+        timeCurrentLos(timeStart);
     }
     renderowanie();
     reset();
@@ -67,11 +89,11 @@ console.log(`Ilość liczb trafionych: ${liczby_trafione.length}`);
 
 let ciagleLosowanie = window.setInterval(function () {
     wszystkieFunkcje();
-},10);
+}, 1);
 
 let czas = window.setInterval(function () {
     console.log('hej');
-}, 1000)
+}, 1000);
 
 
 
