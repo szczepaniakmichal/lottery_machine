@@ -3,23 +3,27 @@ let liczby_chybil_trafil = [];
 let liczby_wylosowane_dzis = [];
 let liczby_trafione = [];
 
+let time = '';
+let iloscLosowan2 = 0;
 
 const timeStart = new Date();
-console.log(timeStart);
-
 
 const timeEnd = () => {
     const time = new Date();
-    console.log(time);
 };
 
 const timeCurrentLos = (timeStart) => {
     const timeEnd = new Date();
     let different = (timeEnd - timeStart) / 1000;
-    console.log(timeEnd);
-    return console.log(`Czas trwania skryptu to: ${different.toFixed(2)} sukund`);
-}
+    time = different;
+    return document.getElementById('czasLosowania').innerHTML = `Czas trwania skryptu to: ${different.toFixed(2)} sukund`;
+    // console.log(`Czas trwania skryptu to: ${different.toFixed(2)} sukund`);
+};
 
+const iloscLosowan = () => {
+    czas = time * 1000;
+    return document.getElementById('iloscLosowan').innerHTML = `Ilość odbytych losowań to: ${czas}`;
+};
 
 const losowanie_wszystkich_liczb = () => {
     for (let i = 1; i <= 42; i++) {
@@ -74,7 +78,11 @@ const wszystkieFunkcje = () => {
         clearInterval(czas);
         timeEnd();
         timeCurrentLos(timeStart);
+        iloscLosowan();
+        document.getElementById('iloscLosowan2').innerHTML = `Ilość odbytych losowań to: ${iloscLosowan2}`;
     }
+    timeEnd();
+    timeCurrentLos(timeStart);
     renderowanie();
     reset();
 };
@@ -89,6 +97,7 @@ console.log(`Ilość liczb trafionych: ${liczby_trafione.length}`);
 
 let ciagleLosowanie = window.setInterval(function () {
     wszystkieFunkcje();
+    iloscLosowan2++;
 }, 1);
 
 let czas = window.setInterval(function () {
