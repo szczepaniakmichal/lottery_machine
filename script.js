@@ -66,6 +66,7 @@ const sprawdzenie_trafien = () => {
 
 const renderowanie = () => {
     document.getElementById('wszystkieLiczby').innerHTML = `Wszystkie liczby: ${wszystkie_liczby}`;
+    document.getElementById('UserNumbers').innerHTML = `Twoje liczby: ${liczby_gracza}`;
     document.getElementById('liczbyChybiłTrafił').innerHTML = `Liczby chybił trafił: ${liczby_chybil_trafil}`;
     document.getElementById('liczbyWylosowaneDzis').innerHTML = `Liczby wylosowane dziś: ${liczby_wylosowane_dzis}`;
     document.getElementById('liczbyTrafione').innerHTML = `Liczby trafione: ${liczby_trafione}`;
@@ -99,11 +100,11 @@ const wszystkieFunkcje = () => {
     liczby_gracza = [];
 };
 
-console.log(`Wszystkie liczby: ${wszystkie_liczby}`);
-console.log(`Liczby chybił trafił: ${liczby_chybil_trafil}`);
-console.log(`Liczby wylosowane dziś: ${liczby_wylosowane_dzis}`);
-console.log(`Liczby trafione: ${liczby_trafione}`);
-console.log(`Ilość liczb trafionych: ${liczby_trafione.length}`);
+// console.log(`Wszystkie liczby: ${wszystkie_liczby}`);
+// console.log(`Liczby chybił trafił: ${liczby_chybil_trafil}`);
+// console.log(`Liczby wylosowane dziś: ${liczby_wylosowane_dzis}`);
+// console.log(`Liczby trafione: ${liczby_trafione}`);
+// console.log(`Ilość liczb trafionych: ${liczby_trafione.length}`);
 
 // let ciagleLosowanie = window.setInterval(function () {
 //     wszystkieFunkcje();
