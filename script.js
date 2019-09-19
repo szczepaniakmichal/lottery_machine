@@ -2,9 +2,12 @@ let wszystkie_liczby = [];
 let liczby_chybil_trafil = [];
 let liczby_wylosowane_dzis = [];
 let liczby_trafione = [];
+let liczby_gracza = [];
+
 
 let time = '';
 let iloscLosowan2 = 0;
+console.log(iloscLosowan2);
 
 const timeStart = new Date();
 
@@ -32,6 +35,12 @@ const losowanie_wszystkich_liczb = () => {
 };
 
 losowanie_wszystkich_liczb();
+
+const getUserValue = () => {
+    $("input:checkbox:checked").each(function () {
+        liczby_gracza.push($(this).val());
+    });
+};
 
 const losowanie = (los, ilosc) => {
     while (los.length < ilosc) {
@@ -70,12 +79,14 @@ const reset = () => {
 };
 
 const wszystkieFunkcje = () => {
+    getUserValue();
+    console.log(liczby_gracza);
     losowanie(liczby_chybil_trafil, 6);
     losowanie(liczby_wylosowane_dzis, 6);
     sprawdzenie_trafien();
-    if (liczby_trafione.length === 4) {
+    if (liczby_trafione.length === 3) {
         clearInterval(ciagleLosowanie);
-        clearInterval(czas);
+        // clearInterval(czas);
         timeEnd();
         timeCurrentLos(timeStart);
         iloscLosowan();
@@ -85,9 +96,8 @@ const wszystkieFunkcje = () => {
     timeCurrentLos(timeStart);
     renderowanie();
     reset();
+    liczby_gracza = [];
 };
-
-wszystkieFunkcje();
 
 console.log(`Wszystkie liczby: ${wszystkie_liczby}`);
 console.log(`Liczby chybił trafił: ${liczby_chybil_trafil}`);
@@ -95,14 +105,11 @@ console.log(`Liczby wylosowane dziś: ${liczby_wylosowane_dzis}`);
 console.log(`Liczby trafione: ${liczby_trafione}`);
 console.log(`Ilość liczb trafionych: ${liczby_trafione.length}`);
 
-let ciagleLosowanie = window.setInterval(function () {
-    wszystkieFunkcje();
-    iloscLosowan2++;
-}, 1);
-
-let czas = window.setInterval(function () {
-    console.log('hej');
-}, 1000);
+// let ciagleLosowanie = window.setInterval(function () {
+//     wszystkieFunkcje();
+//     iloscLosowan2++;
+//     console.log(iloscLosowan2);
+// }, 1000);
 
 
 

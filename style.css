@@ -5,4 +5,9 @@
 
 body {
     background-color: yellow;
+    padding: 20px;
+}
+
+input[type] {
+    margin: 10px;
 }
