@@ -87,7 +87,7 @@ const wszystkieFunkcje = () => {
     sprawdzenie_trafien();
     if (liczby_trafione.length === 3) {
         clearInterval(ciagleLosowanie);
-        // clearInterval(czas);
+        //clearInterval(czas);
         timeEnd();
         timeCurrentLos(timeStart);
         iloscLosowan();
@@ -106,11 +106,11 @@ const wszystkieFunkcje = () => {
 // console.log(`Liczby trafione: ${liczby_trafione}`);
 // console.log(`Ilość liczb trafionych: ${liczby_trafione.length}`);
 
-// let ciagleLosowanie = window.setInterval(function () {
-//     wszystkieFunkcje();
-//     iloscLosowan2++;
-//     console.log(iloscLosowan2);
-// }, 1000);
+let ciagleLosowanie = window.setInterval(function () {
+    wszystkieFunkcje();
+    iloscLosowan2++;
+    console.log(iloscLosowan2);
+}, 1000);
 
 
 
