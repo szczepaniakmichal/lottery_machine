@@ -6,13 +6,32 @@ let liczby_gracza = [];
 
 let rodzaj_gry = '';
 
+const losowanie_wszystkich_liczb = (ileLiczb) => {
+    for (let i = 1; i <= ileLiczb; i++) {
+        wszystkie_liczby.push(i);
+    }
+};
+
+// losowanie liczb
+const losowanieLiczbWybranejGry = () => {
+    if (rodzaj_gry === 'duzyMottek') {
+        losowanie_wszystkich_liczb(40);
+    }
+    if (rodzaj_gry === 'malyMottek') {
+        losowanie_wszystkich_liczb(30);
+    }
+};
+
 
 const wszystkieFunkcje = () => {
     // wybieramy rodzaj gry
     $('#rodzajGry > option:selected').each(function () {
         rodzaj_gry = $(this).val();
     });
-    console.log(rodzaj_gry);
+    // console.log(rodzaj_gry);
+
+    losowanieLiczbWybranejGry();
+    // console.log(wszystkie_liczby);
 
     // pobieramy liczby wybrane przez gracza
     $("input:checked").each(function () {
@@ -24,6 +43,7 @@ const wszystkieFunkcje = () => {
     if (liczby_gracza.length === 0) {
         while (liczby_chybil_trafil.length < 6) {
             let wylosowanaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
+            // console.log(wylosowanaLiczba);
             if (liczby_chybil_trafil.includes(wylosowanaLiczba) === false) {
                 liczby_chybil_trafil.push(wylosowanaLiczba);
             }
@@ -32,14 +52,8 @@ const wszystkieFunkcje = () => {
             return a - b
         });
     }
-    console.log(liczby_gracza);
-
-    // wszystkie dostepne liczby
-    for (let i = 1; i <= 42; i++) {
-        wszystkie_liczby.push(i);
-    }
-    console.log(wszystkie_liczby);
-
+    console.log(liczby_chybil_trafil);
+    
     // losowanie 6 zwycięskich liczb
     while (liczby_wylosowane_dzis.length < 6) {
         let wylosowanaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
@@ -50,25 +64,31 @@ const wszystkieFunkcje = () => {
     liczby_wylosowane_dzis.sort(function (a, b) {
         return a - b
     });
+    console.log(liczby_wylosowane_dzis);
+    console.log(liczby_gracza.length);
 
     // sprawdzenie trafień
     if (liczby_gracza.length > 0) {
+        console.log("Jest");
         liczby_gracza.forEach(e => {
             liczby_wylosowane_dzis.forEach(f => {
-                if (e === f) {
+                if (e == f) {
+                    console.log(e);
+                    console.log(f);
                     liczby_trafione.push(e);
                 }
             })
-        })
-    } else {
-        liczby_chybil_trafil.forEach(e => {
-            liczby_wylosowane_dzis.forEach(f => {
-                if (e === f) {
-                    liczby_trafione.push(e);
-                }
-            })
-        })
-    }
+        });
+     } 
+    // else {
+    //     liczby_chybil_trafil.forEach(g => {
+    //         liczby_wylosowane_dzis.forEach(h => {
+    //             if (g === h) {
+    //                 liczby_trafione.push(g);
+    //             }
+    //         })
+    //     })
+    // }
     console.log(liczby_trafione);
 
     // renderowanie wyników
@@ -78,8 +98,9 @@ const wszystkieFunkcje = () => {
     document.getElementById('liczbyWylosowaneDzis').innerHTML = `Liczby wylosowane dziś: ${liczby_wylosowane_dzis}`;
     document.getElementById('liczbyTrafione').innerHTML = `Liczby trafione: ${liczby_trafione}`;
     document.getElementById('iloscLiczbTrafionych').innerHTML = `Ilość liczb trafionych: ${liczby_trafione.length}`;
-
-    // wyczyszczenie zmiennych
+    //
+    // // wyczyszczenie zmiennych
+    wszystkie_liczby = [];
     liczby_chybil_trafil = [];
     liczby_wylosowane_dzis = [];
     liczby_trafione = [];
