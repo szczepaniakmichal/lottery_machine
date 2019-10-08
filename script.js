@@ -4,6 +4,7 @@ let liczby_wylosowane_dzis = [];
 let liczby_trafione = [];
 let liczby_gracza = [];
 let rodzaj_gry = '';
+let iloscLosowan = 0;
 
 let time = '';
 let iloscLosowan2 = 0;
@@ -86,6 +87,10 @@ const sprawdzenie_trafien = () => {
     }
 };
 
+const updateIloscLosowan = () => {
+    iloscLosowan++;
+};
+
 const renderowanie = () => {
     document.getElementById('wszystkieLiczby').innerHTML = `Wszystkie liczby: ${wszystkie_liczby}`;
     document.getElementById('UserNumbers').innerHTML = `Twoje liczby: ${liczby_gracza}`;
@@ -93,6 +98,7 @@ const renderowanie = () => {
     document.getElementById('liczbyWylosowaneDzis').innerHTML = `Liczby wylosowane dziś: ${liczby_wylosowane_dzis}`;
     document.getElementById('liczbyTrafione').innerHTML = `Liczby trafione: ${liczby_trafione}`;
     document.getElementById('iloscLiczbTrafionych').innerHTML = `Ilość liczb trafionych: ${liczby_trafione.length}`;
+    document.getElementById('iloscLosowan').innerHTML = `Ilość odbytych losowań to: ${iloscLosowan}`;
 };
 
 const reset = () => {
@@ -112,8 +118,10 @@ const wszystkieFunkcje = () => {
     sprawdzenie_trafien();
     timeEnd();
     timeCurrentLos(timeStart);
+    updateIloscLosowan();
     renderowanie();
     reset();
+
 };
 
 // let ciagleLosowanie = window.setInterval(function () {
