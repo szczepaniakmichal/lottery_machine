@@ -67,11 +67,11 @@ const losowanie = (los, ilosc) => {
         let wylosowanaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
         if (los.includes(wylosowanaLiczba) === false) {
             los.push(wylosowanaLiczba);
-            let el = document.createElement('div');
-            el.innerHTML = wylosowanaLiczba;
-            el.className = 'kulka';
-            document.getElementById('test2').appendChild(el);
         }
+        let el = document.createElement('div');
+        el.innerHTML = wylosowanaLiczba;
+        el.className = 'kulka';
+        document.getElementById('test2').appendChild(el);
     }
     los.sort(function (a, b) {
         return a - b
