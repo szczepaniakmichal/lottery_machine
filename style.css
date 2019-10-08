@@ -12,6 +12,23 @@ input[type=checkbox] {
     margin: 10px;
 }
 
+#test {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .margin {
   margin-left: 10px;
-};
+}
+
+.kulka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: yellow;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+}

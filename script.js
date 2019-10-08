@@ -24,6 +24,10 @@ const timeCurrentLos = (timeStart) => {
 
 const losowanie_wszystkich_liczb = (howManyNumber) => {
     for (let i = 1; i <= howManyNumber; i++) {
+        let el = document.createElement('div');
+        el.innerHTML = i;
+        el.className = 'kulka';
+        document.getElementById('test').appendChild(el);
         wszystkie_liczby.push(i);
     }
 };
