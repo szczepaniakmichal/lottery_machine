@@ -22,12 +22,21 @@ const timeCurrentLos = (timeStart) => {
     return document.getElementById('czasLosowania').innerHTML = `Czas trwania skryptu to: ${different.toFixed(2)} sukund`;
 };
 
+// const generatorKulek = (iterator, elId) => {
+//     let el = document.createElement('div');
+//     el.innerHTML = iterator;
+//     el.className = 'kulka';
+//     let test = document.getElementById(elId);
+//     test.appendChild(el);
+// };
+
 const losowanie_wszystkich_liczb = (howManyNumber) => {
     for (let i = 1; i <= howManyNumber; i++) {
         let el = document.createElement('div');
         el.innerHTML = i;
         el.className = 'kulka';
         document.getElementById('test').appendChild(el);
+        // generatorKulek(i,'test');
         wszystkie_liczby.push(i);
     }
 };
@@ -58,6 +67,10 @@ const losowanie = (los, ilosc) => {
         let wylosowanaLiczba = Math.floor(Math.random() * wszystkie_liczby.length + 1);
         if (los.includes(wylosowanaLiczba) === false) {
             los.push(wylosowanaLiczba);
+            let el = document.createElement('div');
+            el.innerHTML = wylosowanaLiczba;
+            el.className = 'kulka';
+            document.getElementById('test2').appendChild(el);
         }
     }
     los.sort(function (a, b) {
