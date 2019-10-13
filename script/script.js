@@ -5,6 +5,8 @@ let liczby_trafione = [];
 let liczby_gracza = [];
 let rodzaj_gry = '';
 let iloscLosowan = 0;
+let duzyMottek = false;
+let malyMottek = false;
 
 let time = '';
 let iloscLosowan2 = 0;
@@ -31,9 +33,13 @@ const losowanie_wszystkich_liczb = (howManyNumber) => {
 const losowanieLiczbWybranejGry = () => {
     if (rodzaj_gry === 'duzyMottek') {
         losowanie_wszystkich_liczb(40);
+        duzyMottek = true;
+        console.log(duzyMottek);
     }
     if (rodzaj_gry === 'malyMottek') {
         losowanie_wszystkich_liczb(30);
+        malyMottek = true;
+        console.log(malyMottek);
     }
 };
 
@@ -47,6 +53,21 @@ const getUserValue = () => {
     $("input:checked").each(function () {
         liczby_gracza.push($(this).val());
     });
+    if ((liczby_gracza.length > 2) && (duzyMottek === true)) {
+        console.log('działa6666');
+        $('#alert').addClass('display');
+    } else {
+        $('#alert').removeClass('display');
+    }
+    console.log(duzyMottek);
+
+    if ((liczby_gracza.length > 1) && (malyMottek === true)) {
+        console.log('działa5555');
+        $('#alert').addClass('display');
+    } else if ( duzyMottek === false ) {
+        $('#alert').removeClass('display');
+    }
+    console.log(malyMottek);
 };
 
 const losowanie = (los, ilosc) => {
@@ -129,6 +150,9 @@ const wszystkieFunkcje = () => {
 //     iloscLosowan2++;
 //     console.log(iloscLosowan2);
 // }, 1000);
+
+console.log(duzyMottek);
+console.log(malyMottek);
 
 
 

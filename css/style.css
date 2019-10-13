@@ -45,3 +45,21 @@ input[type=checkbox] {
     border: silver solid 2px;
     transition: 1s;
 }
+
+.alert {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 250px);
+    width: 500px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    justify-content: center;
+    display: none;
+}
+
+.display {
+    display: block;
+}
