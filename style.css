@@ -5,13 +5,43 @@
 }
 
 body {
-    background-color: limegreen;
+    background-color: silver;
+    font-weight: 700;
 }
 
 input[type=checkbox] {
     margin: 10px;
 }
 
+.rodzaj_gry, .rodzaj_gry > option {
+    background-color: yellow;
+    color: silver;
+    border: yellow solid 2px;
+    transition: 1s;
+    font-weight: 700;
+}
+
+.rodzaj_gry > option {
+    font-weight: 700;
+}
+
 .margin {
   margin-left: 10px;
-};
+}
+
+.start_game {
+    background-color: yellow;
+    color: silver;
+    border: yellow solid 2px;
+    transition: 1s;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.start_game:hover {
+    background-color: silver;
+    color: yellow;
+    border: silver solid 2px;
+    transition: 1s;
+}
