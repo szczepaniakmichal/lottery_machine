@@ -1,52 +1,91 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <title>loterry machine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-            crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.slim.js"
-            integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-            crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous">
+        </script>
 </head>
-<body>
-<div class="container-fluid">
-    <div class="row">
-        <h1 class="col-xl-12">Maszyna losująca</h1>
-    </div>
-    <div class="row">
-        <h3>Wybierz rodzaj gry: </h3>
-        <select class="margin rodzaj_gry" name="" id="rodzajGry">
-            <option  value="duzyMottek">Duzy Mottek</option >
-            <option  value="malyMottek">Mały Mottek</option >
-        </select>
-<!--        <label class="col-xl-6 col-sm-12" for="duzyMottek"><input type="checkbox" name="" id="duzyMottek" value="duzyMottek">Duzy Mottek</label>-->
-<!--        <label class="col-xl-6 col-sm-12" for="malyMottek"><input type="checkbox" name="" id="malyMottek" value="malyMottek">Mały Mottek</label>-->
-    </div>
-    <div class="row">
-        <button class="col-xl-12 start_game" onclick="wszystkieFunkcje()">Rozpocznij losowanie</button>
-    </div>
-  </div>
 
-<div class="polaLiczb">
-<label for="number1"><input type="checkbox" name="" id="number1" value="1">1</label>
-<label for="number2"><input type="checkbox" name="" id="number2" value="2">2</label>
-<label for="number3"><input type="checkbox" name="" id="number3" value="3">3</label>
-<label for="number4"><input type="checkbox" name="" id="number4" value="4">4</label>
-<label for="number5"><input type="checkbox" name="" id="number5" value="5">5</label>
-<label for="number6"><input type="checkbox" name="" id="number6" value="6">6</label>
-<label for="number7"><input type="checkbox" name="" id="number7" value="7">7</label>
-<label for="number8"><input type="checkbox" name="" id="number8" value="8">8</label>
-<label for="number9"><input type="checkbox" name="" id="number9" value="9">9</label>
-<label for="number10"><input type="checkbox" name="" id="number10" value="10">10</label>
-</div>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="col-xl-12">Maszyna losująca</h1>
+        </div>
+        <div class="row">
+            <h3>Wybierz rodzaj gry: </h3>
+            <select class="margin rodzaj_gry" name="" id="rodzajGry">
+                <option value="duzyMottek">Duzy Mottek</option>
+                <option value="malyMottek">Mały Mottek</option>
+            </select>
+            <!--        <label class="col-xl-6 col-sm-12" for="duzyMottek"><input type="checkbox" name="" id="duzyMottek" value="duzyMottek">Duzy Mottek</label>-->
+            <!--        <label class="col-xl-6 col-sm-12" for="malyMottek"><input type="checkbox" name="" id="malyMottek" value="malyMottek">Mały Mottek</label>-->
+        </div>
+        <div class="row">
+            <button class="col-xl-12 start_game" onclick="wszystkieFunkcje()">Rozpocznij losowanie</button>
+        </div>
+    </div>
+
+    
+        <div class="row">
+<!--            <div class="col-12">-->
+                <label class="col-1" for="number1"><input type="checkbox" name="" id="number1" value="1">1</label>
+                <label class="col-1" for="number2"><input type="checkbox" name="" id="number2" value="2">2</label>
+                <label class="col-1" for="number3"><input type="checkbox" name="" id="number3" value="3">3</label>
+                <label class="col-1" for="number4"><input type="checkbox" name="" id="number4" value="4">4</label>
+                <label class="col-1" for="number5"><input type="checkbox" name="" id="number5" value="5">5</label>
+                <label class="col-1" for="number6"><input type="checkbox" name="" id="number6" value="6">6</label>
+                <label class="col-1" for="number7"><input type="checkbox" name="" id="number7" value="7">7</label>
+                <label class="col-1" for="number8"><input type="checkbox" name="" id="number8" value="8">8</label>
+                <label class="col-1" for="number9"><input type="checkbox" name="" id="number9" value="9">9</label>
+                <label class="col-1" for="number10"><input type="checkbox" name="" id="number10" value="10">10</label>
+<!--            </div>-->
+            
+        </div>
+        <div class="row">
+<!--            <div class="col-1">-->
+                <label class="col-1" for="number11"><input type="checkbox" name="" id="number11" value="11">11</label>
+                <label class="col-1" for="number12"><input type="checkbox" name="" id="number12" value="12">12</label>
+                <label class="col-1" for="number13"><input type="checkbox" name="" id="number13" value="13">13</label>
+                <label class="col-1" for="number14"><input type="checkbox" name="" id="number14" value="14">14</label>
+                <label class="col-1" for="number15"><input type="checkbox" name="" id="number15" value="15">15</label>
+                <label class="col-1" for="number16"><input type="checkbox" name="" id="number16" value="16">16</label>
+                <label class="col-1" for="number17"><input type="checkbox" name="" id="number17" value="17">17</label>
+                <label class="col-1" for="number18"><input type="checkbox" name="" id="number18" value="18">18</label>
+                <label class="col-1" for="number19"><input type="checkbox" name="" id="number19" value="19">19</label>
+                <label class="col-1" for="number20"><input type="checkbox" name="" id="number20" value="20">20</label>
+<!--            </div>-->
+            
+        </div>
+        
+        
+        <label for="number21"><input type="checkbox" name="" id="number21" value="21">21</label>
+        <label for="number22"><input type="checkbox" name="" id="number22" value="22">22</label>
+        <label for="number23"><input type="checkbox" name="" id="number23" value="23">23</label>
+        <label for="number24"><input type="checkbox" name="" id="number24" value="24">24</label>
+        <label for="number25"><input type="checkbox" name="" id="number25" value="25">25</label>
+        <label for="number26"><input type="checkbox" name="" id="number26" value="26">26</label>
+        <label for="number27"><input type="checkbox" name="" id="number27" value="27">27</label>
+        <label for="number28"><input type="checkbox" name="" id="number28" value="28">28</label>
+        <label for="number29"><input type="checkbox" name="" id="number29" value="29">29</label>
+        <label for="number30"><input type="checkbox" name="" id="number30" value="30">30</label>
+        <label for="number31"><input type="checkbox" name="" id="number31" value="31">31</label>
+        <label for="number32"><input type="checkbox" name="" id="number32" value="32">32</label>
+        <label for="number33"><input type="checkbox" name="" id="number33" value="33">33</label>
+        <label for="number34"><input type="checkbox" name="" id="number34" value="34">34</label>
+        <label for="number35"><input type="checkbox" name="" id="number35" value="35">35</label>
+        <label for="number36"><input type="checkbox" name="" id="number36" value="36">36</label>
+        <label for="number37"><input type="checkbox" name="" id="number37" value="37">37</label>
+        <label for="number38"><input type="checkbox" name="" id="number38" value="38">38</label>
+        <label for="number39"><input type="checkbox" name="" id="number39" value="39">39</label>
+        <label for="number40"><input type="checkbox" name="" id="number40" value="40">40</label>
+    
 
     <p id="wszystkieLiczby">Wszystkie liczby:</p>
     <p id="UserNumbers">Twoje liczby</p>
@@ -58,11 +97,18 @@
     <p id="iloscLosowan">Ilość odbytych losowań to:</p>
     <p id="iloscLosowan2">Ilość odbytych losowań to:</p>
 
-<div id="alert" class="alert">Możesz maksymanlnie zaznaczyć 6 liczb</div>
+    <div id="alert" class="alert">Możesz maksymanlnie zaznaczyć 6 liczb</div>
 
     <script src="script/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
