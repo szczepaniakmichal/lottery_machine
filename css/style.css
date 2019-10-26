@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-  /*box-sizing: border-box;*/
+  box-sizing: border-box;
 }
 
 body {
@@ -11,6 +11,44 @@ body {
 
 input[type=checkbox] {
     margin: 10px;
+}
+
+label {
+    background-color: yellow;
+    color: silver;
+    border: silver solid 2px;
+    transition: 1s;
+}
+
+body > div > div:nth-child(4) {
+    margin-top: 20px;
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+[class^="col-"], [class*=" col-"] {
+      padding-right: 0;
+      padding-left: 0;
+  }
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.row > label {
+    text-align: center;
+}
+
+.row > h1 {
+    text-align: center;
 }
 
 .rodzaj_gry, .rodzaj_gry > option {
@@ -39,10 +77,10 @@ input[type=checkbox] {
     margin-top: 10px;
 }
 
-.start_game:hover {
+.start_game:hover, label:hover {
     background-color: silver;
     color: yellow;
-    border: silver solid 2px;
+    border: yellow solid 2px;
     transition: 1s;
 }
 
@@ -62,4 +100,6 @@ input[type=checkbox] {
 
 .display {
     display: block;
+    position: absolute;
+    top: 0;
 }

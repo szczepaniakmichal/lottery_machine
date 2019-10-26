@@ -51,16 +51,22 @@ const getUserValue = () => {
     $("input:checked").each(function () {
         liczby_gracza.push($(this).val());
     });
-    if ((liczby_gracza.length > 2) && (duzyMottek === true)) {
+    if ((liczby_gracza.length > 6) && (duzyMottek === true)) {
         $('#alert').addClass('display');
     } else {
         $('#alert').removeClass('display');
     }
 
-    if ((liczby_gracza.length > 1) && (malyMottek === true)) {
+    if ((liczby_gracza.length > 5) && (malyMottek === true)) {
         $('#alert').addClass('display');
     } else if ( duzyMottek === false ) {
         $('#alert').removeClass('display');
+    }
+};
+
+const howManyNumbers = () => {
+    if ($('#alert').hasClass('display')) {
+        return false;
     }
 };
 
@@ -130,6 +136,7 @@ const wszystkieFunkcje = () => {
     wyborGry();
     losowanieLiczbWybranejGry();
     getUserValue();
+    howManyNumbers();
     userOrRandomNumbers();
     losowanie(liczby_wylosowane_dzis, 6);
     sprawdzenie_trafien();
