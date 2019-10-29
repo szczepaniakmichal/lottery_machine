@@ -1,3 +1,48 @@
+const divContainer = document.createElement('div');
+document.body.appendChild(divContainer);
+divContainer.classList = 'container-fluid no-gutters';
+
+const headerDiv = document.createElement('div');
+let divTwo = document.body.childNodes;
+divTwo[2].appendChild(headerDiv);
+console.log(divTwo[2]);
+
+headerDiv.classList = 'row no-gutters';
+
+// let p = document.createElement("p");
+//
+// p.innerText = "extra";
+//
+// const count = document.getElementById("d1").appendChild(p);
+// console.log(count);
+//
+// let text = ["text1", "tex2", "text3", "text4"];
+// text.forEach(function (el) {
+//     var div = document.createElement("div");
+//     div.className = "finalBlock";
+//     div.innerHTML = el;
+//     document.body.appendChild(div);
+//     document.getElementById("d1").appendChild(div);
+// });
+
+
+// <div class="row no-gutters">
+//     <h1 class="col-xl-12">Maszyna losująca</h1>
+// </div>
+// <div class="row no-gutters">
+//     <h3>Wybierz rodzaj gry: </h3>
+// <select class="margin rodzaj_gry" name="" id="rodzajGry">
+//     <option value="duzyMottek">Duzy Mottek</option>
+// <option value="malyMottek">Mały Mottek</option>
+// </select>
+// <!--        <label class="col-xl-6 col-sm-12" for="duzyMottek"><input type="checkbox" name="" id="duzyMottek" value="duzyMottek">Duzy Mottek</label>-->
+// <!--        <label class="col-xl-6 col-sm-12" for="malyMottek"><input type="checkbox" name="" id="malyMottek" value="malyMottek">Mały Mottek</label>-->
+// </div>
+// <div class="row no-gutters">
+//     <button class="col-xl-12 start_game" onclick="wszystkieFunkcje()">Rozpocznij losowanie</button>
+// </div>
+
+
 let wszystkie_liczby = [];
 let liczby_chybil_trafil = [];
 let liczby_wylosowane_dzis = [];
@@ -59,7 +104,7 @@ const getUserValue = () => {
 
     if ((liczby_gracza.length > 5) && (malyMottek === true)) {
         $('#alert').addClass('display');
-    } else if ( duzyMottek === false ) {
+    } else if (duzyMottek === false) {
         $('#alert').removeClass('display');
     }
 };
