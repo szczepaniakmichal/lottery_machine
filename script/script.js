@@ -11,16 +11,15 @@ let malyMottek = false;
 let time = '';
 let iloscLosowan2 = 0;
 
-const timeStart = new Date();
+const timeStart = Date.now();
 
 const timeEnd = () => {
     return new Date();
 };
 
 const timeCurrentLos = (timeStart) => {
-    const timeEnd = new Date();
-    let different = (timeEnd - timeStart) / 1000;
-    time = different;
+    const timeEnd = new Date().getTime(); // = Date.now();
+    let different = ((timeEnd - timeStart) / 1000) + 60;
     return document.getElementById('czasLosowania').innerHTML = `Czas trwania skryptu to: ${different.toFixed(2)} sukund`;
 };
 
